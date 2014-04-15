@@ -1,0 +1,140 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jLabel1" alignment="0" pref="848" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="c_lottery" min="-2" pref="266" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel7" min="-2" max="-2" attributes="1"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tf_name" min="-2" pref="207" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="bt_date" min="-2" pref="98" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="75" max="-2" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
+          </Group>
+          <Component id="jScrollPane1" alignment="0" pref="848" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jLabel1" min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="c_lottery" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="jLabel7" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="tf_name" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bt_date" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="335" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Member List"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="c_lottery">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel(lottery.toArray())" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="c_lotteryItemStateChanged"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="Dbcon db=new Dbcon();&#xa;db.connect();&#xa;        try&#xa;        {&#xa;            db.rslt=db.stmt.executeQuery(&quot;select lottery_no from lottery&quot;);            &#xa;            while(db.rslt.next())&#xa;            {&#xa;                lottery.addElement(db.rslt.getString(1));&#xa;            }&#xa;            &#xa;}&#xa;        catch(Exception e){JOptionPane.showMessageDialog(mainframe,&quot;Error&quot;+e);}&#xa;        db.disconnect();"/>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="java.util.Vector lottery=new java.util.Vector();"/>
+        <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="//Dbcon db=new Dbcon();&#xa;{&#xa;                DefaultTableModel model=null;&#xa;                Object datas[][]=null;//={{false,&quot;aaa&quot;,&quot;ccc&quot;},{false,&quot;ddd&quot;,&quot;fff&quot;}};&#xa;&#x9;&#x9;//Dbcon db=new Dbcon();&#xa;                db.connect();&#xa;                try&#xa;                {&#xa;                        db.rslt=db.stmt.executeQuery(&quot;SELECT memberaccount.member_no,memberinfo.name,memberinfo.f_name,memberinfo.address,memberinfo.contact_no from lottery2.memberinfo,lottery2.memberaccount where memberinfo.member_id=memberaccount.member_id and memberaccount.lottery_no=&apos;&quot;+lottery.elementAt(c_lottery.getSelectedIndex())+&quot;&apos;&quot;);&#xa;                        db.rslt.afterLast();&#xa;                        int count=0;&#xa;                        if (db.rslt.previous())count=db.rslt.getRow();&#xa;                        datas=new Object[count][6];&#xa;                        db.rslt.beforeFirst();&#xa;                        count=0;&#xa;                        while (db.rslt.next())&#xa;                        {&#xa;                                datas[count][0]=(count+1)+&quot;&quot;;&#xa;                                datas[count][1]=lottery.elementAt(c_lottery.getSelectedIndex())+&quot;-&quot;+db.rslt.getString(1);&#xa;                                datas[count][2]=db.rslt.getString(2);&#xa;                                datas[count][3]=db.rslt.getString(3);&#xa;                                datas[count][4]=db.rslt.getString(4);&#xa;                                datas[count][5]=db.rslt.getString(5);&#xa;                                count++;&#xa;                        }&#xa;                }&#xa;                catch (Exception e)&#xa;                {&#xa;                        System.out.println(e);&#xa;                }&#x9;&#x9;&#xa;&#x9;&#x9;Object[] columnNamess = {&quot;S.N.&quot;,&quot;Member ID&quot;,&quot;Name&quot;,&quot;Father&apos;s Name&quot;,&quot;Address&quot;,&quot;Contact No.&quot;};&#xa;&#x9;&#x9;model = new DefaultTableModel(datas, columnNamess);&#xa;&#xa;&#x9;&#x9;table.setModel(model);&#xa;                //table.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));&#xa;               db.disconnect();&#xa;&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="table">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="4" rowCount="4">
+                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+              </Table>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="16" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Member Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_name">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="16" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_nameActionPerformed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_nameKeyReleased"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt_date">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_dateActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Close"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
