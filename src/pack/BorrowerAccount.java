@@ -842,7 +842,7 @@ public class BorrowerAccount extends javax.swing.JInternalFrame {
             if(r_debit.isSelected())
                 debit=Integer.valueOf(tf_debit.getText());
             DefaultTableModel modeld=null;
-             for (int i=0;i<table.getRowCount();i++) {
+             for (int i=0;i<table.getRowCount()-1;i++) {
                     modeld=(DefaultTableModel)table.getModel();
                     String dr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(2);
                     String cr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(3);
@@ -916,7 +916,7 @@ public class BorrowerAccount extends javax.swing.JInternalFrame {
             if(r_debit.isSelected())
                 debit=Integer.valueOf(tf_debit.getText());
              DefaultTableModel modeld=null;
-             for (int i=0;i<table.getRowCount();i++) {
+             for (int i=0;i<table.getRowCount()-1;i++) {
                     modeld=(DefaultTableModel)table.getModel();
                     String dr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(2);
                     String cr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(3);

@@ -909,14 +909,16 @@ public class InvestorAccount extends javax.swing.JInternalFrame {
             if(r_debit.isSelected())
                 debit=Integer.valueOf(tf_debit.getText());
             DefaultTableModel modeld=null;
-             for (int i=0;i<table.getRowCount();i++) {
+             for (int i=0;i<table.getRowCount()-1;i++) {
                     modeld=(DefaultTableModel)table.getModel();
                     String dr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(2);
                     String cr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(3);
                     String in=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(4);
+
                     olddebit+=Integer.parseInt(dr);
                     oldcredit+=Integer.parseInt(cr);
                     oldinterest+=Integer.parseInt(in);
+                    System.out.println("i="+i+", interest="+interest+",currentbalance="+currentbalance+",oldcredit="+oldcredit+",olddebit="+olddebit);
              }
         }
         catch(Exception e)
@@ -932,6 +934,7 @@ public class InvestorAccount extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(mainframe,"Error In Date !","Error",JOptionPane.ERROR_MESSAGE);
             return;
         }
+        System.out.println("interest="+interest+",currentbalance="+currentbalance+",oldcredit="+oldcredit+",olddebit="+olddebit);
         tf_interest.setText(interest+(oldcredit+oldinterest-olddebit-currentbalance)+"");
         tf_max.setText((tbalance+interest+(oldcredit+oldinterest-olddebit-currentbalance))+"");
     }//GEN-LAST:event_tf_debitActionPerformed
@@ -976,7 +979,7 @@ public class InvestorAccount extends javax.swing.JInternalFrame {
             if(r_debit.isSelected())
                 debit=Integer.valueOf(tf_debit.getText());
              DefaultTableModel modeld=null;
-             for (int i=0;i<table.getRowCount();i++) {
+             for (int i=0;i<table.getRowCount()-1;i++) {
                     modeld=(DefaultTableModel)table.getModel();
                     String dr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(2);
                     String cr=(String)((Vector)modeld.getDataVector().elementAt(i)).elementAt(3);
@@ -1026,6 +1029,7 @@ public class InvestorAccount extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(mainframe,"Investor's Can Not Take Much Amount Than Invest Amount+Interest ","Error",JOptionPane.ERROR_MESSAGE);
                     return;
                 }
+                System.out.println("currentbalance="+currentbalance+",debit="+debit+",oldcredit="+oldcredit+",olddebit="+olddebit);
                 db.stmt.executeUpdate("insert into investsheet(lottery_no,investor_id,date,debit,credit,interest,balance) "+
 
                            "values('"+lottery.elementAt(c_lottery.getSelectedIndex())+"',"+member_id.elementAt(c_member.getSelectedIndex())+",'"+DateConverter.toYYYYMMDD(tf_date.getText())
