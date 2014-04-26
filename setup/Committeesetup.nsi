@@ -93,8 +93,6 @@ Section "Committee-2.1 (required)" SecDummy
   
   SetOutPath "$INSTDIR\lib"
   File "lib\mysql-connector-java-5.1.6-bin.jar"
-  SetOutPath "$INSTDIR\src"
-   File "src\config.properties"
 
 SectionEnd
 
