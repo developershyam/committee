@@ -192,7 +192,11 @@ public class Home extends javax.swing.JInternalFrame {
        jpb.setBorderPainted(true);
        jpb.setValue(20);
        byte[] data = b.getData("localhost", "3306", user,   Password, Database).getBytes();
-       File filedst = new File(backuppath+"\\"+Database+dateStr+".zip");
+       File file = new File(backuppath+"\\"+Database+dateStr+".sql");
+       FileOutputStream fileOut= new FileOutputStream(file);
+       fileOut.write(data);
+       fileOut.close();
+       /*File filedst = new File(backuppath+"\\"+Database+dateStr+".zip");
        jpb.setValue(40);
        FileOutputStream dest = new FileOutputStream(filedst);
        jpb.setValue(30);
@@ -208,7 +212,7 @@ public class Home extends javax.swing.JInternalFrame {
        zip.write(data);
        jpb.setValue(90);
        zip.close();
-       dest.close();
+       dest.close();*/
       jpb.setValue(100);
        JOptionPane.showMessageDialog(null, "Back Up Successfully.","Successful",JOptionPane.INFORMATION_MESSAGE);
        dispose();
