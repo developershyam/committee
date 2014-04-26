@@ -18,13 +18,13 @@ class Dbcon
 	Dbcon()
 	{
             try {
-                Properties prop = new Properties();
-                prop.load(new FileInputStream("src/config.properties"));
-                url=prop.getProperty("db.url");
-                dbName=prop.getProperty("db.name");
-                driver=prop.getProperty("db.driver");
-                userName=prop.getProperty("db.user.name");
-                password=prop.getProperty("db.user.password");
+                //Properties prop = new Properties();
+                //prop.load(new FileInputStream("src/config.properties"));
+                url="jdbc:mysql://localhost:3306/"; //prop.getProperty("db.url");
+                dbName="committee1"; //prop.getProperty("db.name");
+                driver="com.mysql.jdbc.Driver"; //prop.getProperty("db.driver");
+                userName="root"; //prop.getProperty("db.user.name");
+                password="root"; //prop.getProperty("db.user.password");
                 System.out.println("Properties successfully loaded");
 
             } catch (Exception e) {

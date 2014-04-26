@@ -1,0 +1,26 @@
+         		Welcome to our Xieon Technologies
+	
+		        License Agreement
+	            Copyright © 2012 Xieon Technologies
+ 	
+        This software is provided to SilverPlus by Xieon Technologies
+        for Gold Stock Process Management.
+
+       This software can not be used for re-selling without permission from
+       Xieon Technologies.
+
+      Any re-sale or further distribution of the software, other than as expressly  authorized by this agreement, constitutes a material breach of this agrement and may violate applicable copyright laws. Notice: This software may contain a "Time Out" feature that will render the software inoperative at the end of the  term(as dfined below).
+
+     END USER SOFTWARE LICENSE AGREEMENT
+
+     License Grant; Related Provisions.
+
+       1.    Grant of a Single User License.  Xieon Technologies, subject to the terms and conditions of this Agreement, hereby grants to you a non-exclusive  and non-transferable license during the Term to use the Software (i) solely in executable or object code form, on a single computer, and (ii) solely for your personal use and not for purchase, sale or delivery of any product or service to a third party or other commercial or business purpose.
+       
+       2. Updates.  Xieon Technologies, from time to time during the Term, may provide updates to the Software and/or the malware signatures included therein (each, an "Update").  Updates will be deemed Software for all purposes under this Agreement.  You acknowledge that you must routinely download and permit installation of Updates in order to obtain maximum benefit from the Software.  In no event shall Xieon Technologies be obligated to provide you with Updates following the expiration or termination of this Agreement, and in its sole discretion may terminate updates for any version of the Software other than the most current version, or for use of Software in connection with versions of any third party operating systems, email programs, browser programs and other software other than the most current version.
+	 
+       3. Language.  This Agreement was originally prepared in the English language.  Although Xieon Technologies may provide one or more  translations for your convenience, the English version will control in the case of any conflict or discrepancy.
+
+		        Xieon Technologies     
+                	F-152 Tulip Enclave, Central Spine, Vidhadhar Nagar,Jaipur
+	      E-mail-xieontech@gmail.com,Ph.- +919928712342,		                                +919772725125,0141-5112342
